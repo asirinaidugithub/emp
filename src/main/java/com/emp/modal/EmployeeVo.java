@@ -1,11 +1,14 @@
 package com.emp.modal;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
 
 @Data
+@NoArgsConstructor
 public class EmployeeVo {
     private Long id;
     private String empId;
@@ -13,17 +16,7 @@ public class EmployeeVo {
     private String lastName;
     private String email;
     private Date doj;
-    private String createdBy;
-    private String updatedBy;
-    private Date createdDate;
-    private Date updatedDate;
-
     private Double salary;
-    private Double yearlySal;
-    private Double taxAmt;
-    private Double cessAmt;
-
-    private List<String> phoneNoList;
-    private List<PhoneVo> phoneNos;
+    private List<PhoneVo> phones;
 
 }

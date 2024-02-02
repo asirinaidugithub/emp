@@ -11,5 +11,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class PhoneVo {
     private Long id;
+    private String type;
     private String phoneNo;
 }
