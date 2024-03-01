@@ -1,4 +1,4 @@
-package com.emp.modal;
+package com.usr.modal;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,9 +1,9 @@
-package com.emp.controller;
+package com.usr.controller;
 
-import com.emp.modal.BaseResponse;
-import com.emp.modal.EmployeeVo;
-import com.emp.service.EmpService;
-import com.emp.util.AppException;
+import com.usr.modal.BaseResponse;
+import com.usr.modal.UserVo;
+import com.usr.service.UserService;
+import com.usr.util.AppException;
 import com.google.gson.GsonBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,43 +16,43 @@ import java.util.Objects;
 
 @Slf4j
 @RestController
-@RequestMapping(value = "/emp")
-public class EmpController {
+@RequestMapping(value = "/usr")
+public class UserController {
 	@Autowired
-	EmpService empService;
+	UserService userService;
 
-	@GetMapping(value = "/get-emp", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> getEmp(@RequestParam("empId") Long empid) {
+	@GetMapping(value = "/get-usr", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> getEmp(@RequestParam("usrId") Long empid) {
 		BaseResponse baseResponse = new BaseResponse();
-		baseResponse.setData(empService.getEmp(empid));
+		baseResponse.setData(userService.getUser(empid));
 		return genResponse(baseResponse);
 	}
 
-	@GetMapping(value = "/get-emps", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/get-usrs", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> getEmps() {
 		BaseResponse baseResponse = new BaseResponse();
-		baseResponse.setData(empService.getEmpList());
+		baseResponse.setData(userService.getUserList());
 		return genResponse(baseResponse);
 	}
 
-	@PostMapping(value = "/save-emp", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> saveEmp(@RequestBody EmployeeVo employeeVo) {
+	@PutMapping(value = "/save-usr", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> saveEmp(@RequestBody UserVo userVo) {
 		BaseResponse baseResponse = new BaseResponse();
-		baseResponse.setData(empService.saveEmp(employeeVo));
+		baseResponse.setData(userService.saveUser(userVo));
 		return genResponse(baseResponse);
 	}
 
-	@PostMapping(value = "/update-emp", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> updateEmp(@RequestBody EmployeeVo employeeVo) {
+	@PostMapping(value = "/update-usr", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> updateEmp(@RequestBody UserVo userVo) {
 		BaseResponse baseResponse = new BaseResponse();
-		baseResponse.setData(empService.updateEmp(employeeVo));
+		baseResponse.setData(userService.updateUser(userVo));
 		return genResponse(baseResponse);
 	}
 
-	@DeleteMapping(value = "/delete-emp", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> deleteEmp(@RequestParam("empId") Long empId) {
+	@DeleteMapping(value = "/delete-usr", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<String> deleteEmp(@RequestParam("usrId") Long userId) {
 		BaseResponse baseResponse = new BaseResponse();
-		empService.deleteEmp(empId);
+		userService.deleteUser(userId);
 		return genResponse(baseResponse);
 	}
 

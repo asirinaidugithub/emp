@@ -1,6 +1,5 @@
-package com.emp.modal;
+package com.usr.modal;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,14 +8,13 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class EmployeeVo {
+public class UserVo {
     private Long id;
-    private String empId;
+    private String userId;
     private String firstName;
     private String lastName;
     private String email;
     private Date doj;
-    private Double salary;
     private List<PhoneVo> phones;
 
 }

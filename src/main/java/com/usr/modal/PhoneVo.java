@@ -1,4 +1,4 @@
-package com.emp.modal;
+package com.usr.modal;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,19 +1,18 @@
-package com.emp.util;
+package com.usr.util;
 
 import lombok.Getter;
 
 import java.util.Map;
-
 @Getter
-public class PhoneException extends RuntimeException {
+public class AppException extends RuntimeException {
     private String message;
     private Map<String, String> errMap;
 
-    public PhoneException(String message) {
+    public AppException(String message) {
         this.message = message;
     }
 
-    public PhoneException(Map<String, String> map) {
+    public AppException(Map<String, String> map) {
         this.errMap = map;
     }
 }

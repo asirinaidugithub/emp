@@ -1,6 +1,5 @@
-package com.emp.modal;
+package com.usr.modal;
 
-import com.emp.entity.Employee;
 import lombok.*;
 
 @Data

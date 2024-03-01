@@ -1,9 +1,6 @@
-package com.emp.config;
+package com.usr.config;
 
-import com.emp.modal.BaseResponse;
-import com.emp.util.AppException;
-import com.emp.util.EmpException;
-import com.emp.util.PhoneException;
+import com.usr.modal.BaseResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
