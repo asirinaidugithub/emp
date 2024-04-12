@@ -1,0 +1,3 @@
+{
+    jwtToken: getItem("toke");
+}
